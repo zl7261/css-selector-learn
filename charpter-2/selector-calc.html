@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*css优先级一致,后渲染优先级更好*/
+        html[lang] > .foo {
+            color: blue
+        }
+
+        body.foo:not([dir]) {
+            color: red
+        }
+
+        /**css优先级更高*/
+        /*html[lang]:not([dir])>.foo{color: blue}  */
+    </style>
+</head>
+<body class="foo">
+颜色?
+</body>
+</html>
