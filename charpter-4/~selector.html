@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* common */
+        .cs-input {
+            width: 200px;
+            box-sizing: border-box;
+        }
+
+        .cs-label {
+            display: inline-block;
+            width: 64px;
+        }
+
+        :focus ~ .cs-label {
+            color: darkblue;
+            text-shadow: 0 0 1px;
+        }
+
+        /* flex方法 */
+        .cs-flex {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+
+        /* float方法 */
+        .cs-float {
+            width: 264px;
+            margin: 1em auto;
+        }
+
+        .cs-float .cs-input {
+            float: right;
+        }
+
+        .cs-float .cs-label {
+            display: block;
+            width: auto;
+            overflow: hidden;
+        }
+
+        /* absolute方法 */
+        .cs-absolute {
+            width: 264px;
+            margin: 1em auto;
+            position: relative;
+        }
+
+        .cs-absolute .cs-input {
+            margin-left: 64px;
+        }
+
+        .cs-absolute .cs-label {
+            position: absolute;
+            left: 0;
+        }
+
+        /* direction方法 */
+        .cs-direction {
+            direction: rtl;
+            text-align: center;
+        }
+
+        .cs-direction .cs-label,
+        .cs-direction .cs-input {
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="cs-flex">
+        <input class="cs-input"><label class="cs-label">用户名：</label>
+    </div>
+    <div class="cs-float">
+        <input class="cs-input"><label class="cs-label">用户名：</label>
+    </div>
+    <div class="cs-absolute">
+        <input class="cs-input"><label class="cs-label">用户名：</label>
+    </div>
+    <div class="cs-direction">
+        <input class="cs-input"><label class="cs-label">用户名：</label>
+    </div>
+</div>
+</body>
+</html>

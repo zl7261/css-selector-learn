@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cs-g1 .cs-li:not(:first-child) {
+            color: skyblue;
+        }
+
+        .cs-g2 .cs-li + .cs-li {
+            color: skyblue;
+        }
+
+        .cs-tips {
+            color: gray;
+            margin-left: 15px;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .text:focus + .cs-tips {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h4>使用:first-child实现</h4>
+    <p>列表内容1</p>
+    <p>列表内容2</p>
+    <p>列表内容3</p>
+</div>
+<div class="cs-g1" style="display: inline-block">
+    <h4>使用:first-child实现</h4>
+    <p class="cs-li">列表内容1</p>
+    <p class="cs-li">列表内容2</p>
+    <p class="cs-li">列表内容3</p>
+</div>
+<div class="cs-g2" style="display: inline-block">
+    <h4>使用相邻兄弟选择符实现</h4>
+    <p class="cs-li">列表内容1</p>
+    <p class="cs-li">列表内容2</p>
+    <p class="cs-li">列表内容3</p>
+</div>
+<div>
+    用户名：
+    <input type="text"/>
+    <input class="text" type="text"/>
+    <span class="cs-tips">不超过10个字符</span>
+</div>
+
+
+</body>
+</html>
