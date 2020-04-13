@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    [center] {
+        width: 800px;
+        height: 800px;
+        position: absolute;
+        border-width: 1px;
+        border-style: dotted solid double dashed;
+        border-color: red;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    [id] {
+        color: red
+    }
+
+    [class="321"] {
+        color: blue;
+    }
+
+    [class=no-quote] {
+        background-color: purple;
+    }
+
+    [class~=red] {
+        color: red;
+    }
+    </style>
+</head>
+<body>
+<div center>
+
+    <div id="123">
+        测试
+    </div>
+    <div class="321">
+        测试
+    </div>
+    <div class="no-quote">
+        测试
+    </div>
+    <div class=" red">
+        测试
+    </div>
+    <div class="no-quote red">
+        测试
+    </div>
+    <div class="no-quote red">
+        测试
+    </div>
+</div>
+
+</body>
+</html>

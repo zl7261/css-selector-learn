@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+    /* 非关键代码参见页面源代码 */
+    .icon-delete {
+        display: block;
+        width: 20px;
+        height: 20px;
+        font-size: 0;
+        margin: auto;
+        position: relative;
+    }
+
+    .icon-delete::before {
+        content: attr(data-title);
+        position: absolute;
+        visibility: hidden;
+        transition: visibility 0s .2s;
+        background-color: #333;
+        color: white;
+        bottom: 100%;
+        left: 50%;
+        padding: 1px 5px;
+        transform: translateX(-50%);
+        font-size: 12px;
+        white-space: nowrap;
+        border-radius: 3px;
+        margin-bottom: 4px;
+    }
+
+    .icon-delete::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-bottom: -4px;
+        transform: translateX(-50%);
+        border: 4px solid transparent;
+        border-top-color: #333;
+        transition: visibility 0s .2s;
+        visibility: hidden;
+    }
+
+    /* 关键CSS  */
+    .icon-delete::before,
+    .icon-delete::after {
+        transition: visibility 0s .2s;
+        visibility: hidden;
+    }
+
+    .icon-delete:hover::before,
+    .icon-delete:hover::after {
+        visibility: visible;
+    }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th scope="col">标题1</th>
+        <th scope="col">标题2</th>
+        <th scope="col" width="40">操作</th>
+    </tr>
+    <tr>
+        <td>内容1</td>
+        <td>内容2</td>
+        <td><a href class="icon-delete" data-title="删除">删除</a></td>
+    </tr>
+    <tr>
+        <td>内容3</td>
+        <td>内容4</td>
+        <td><a href class="icon-delete" data-title="删除">删除</a></td>
+    </tr>
+</table>
+<svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+     viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="519">
+    <path d="M519.620465 0c-103.924093 0-188.511256 82.467721-192.083349 185.820279H85.015814A48.91386 48.91386 0 0 0 36.101953 234.686512a48.91386 48.91386 0 0 0 48.913861 48.866232h54.010046V831.345116c0 102.852465 69.822512 186.844279 155.909954 186.844279h439.200744c86.087442 0 155.909953-83.491721 155.909954-186.844279V284.100465h48.91386a48.91386 48.91386 0 0 0 48.913861-48.890046 48.91386 48.91386 0 0 0-48.913861-48.866233h-227.756651A191.559442 191.559442 0 0 0 519.620465 0z m-107.234232 177.080558c3.548279-49.771163 46.627721-88.540279 99.851907-88.540279 53.224186 0 96.327442 38.745302 99.351813 88.540279h-199.20372z m-111.997024 752.044651c-30.981953 0-65.083535-39.15014-65.083535-95.041488V287.744h575.488v546.839814c0 55.915163-34.077767 95.041488-65.059721 95.041488H300.389209v-0.500093z"
+          fill="#D81E06" p-id="520"></path>
+    <path d="M368.116093 796.814884c24.361674 0 44.27014-21.670698 44.27014-48.818605v-278.623256c0-27.147907-19.908465-48.818605-44.27014-48.818604-24.33786 0-44.27014 21.670698-44.27014 48.818604v278.623256c0 27.147907 19.360744 48.818605 44.293954 48.818605z m154.933581 0c24.361674 0 44.293953-21.670698 44.293954-48.818605v-278.623256c0-27.147907-19.932279-48.818605-44.293954-48.818604-24.33786 0-44.27014 21.670698-44.270139 48.818604v278.623256c0 27.147907 19.932279 48.818605 44.293953 48.818605z m132.810419 0c24.33786 0 44.27014-21.670698 44.27014-48.818605v-278.623256c0-27.147907-19.932279-48.818605-44.27014-48.818604s-44.27014 21.670698-44.27014 48.818604v278.623256c0 27.147907 19.360744 48.818605 44.27014 48.818605z"
+          fill="#D81E06" p-id="521"></path>
+</svg>
+</body>
+</html>
