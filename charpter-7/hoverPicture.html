@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    img {
+        position: absolute;
+
+        margin-left: 20px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s linear;
+    }
+
+    a:hover + img,
+    a:focus + img,
+    img:hover {
+        visibility: visible;
+        opacity: 1;
+    }
+    </style>
+</head>
+<body>
+<a href>图片链接</a>
+<img src="img/saito.jpg" alt="asuka-saito">
+</body>
+</html>

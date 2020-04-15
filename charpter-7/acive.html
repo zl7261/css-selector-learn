@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    p:active {
+        background: teal;
+    }
+
+    img:active {
+        outline: 30px solid #ccc;
+    }
+
+    button:active {
+        box-shadow: inset 0 0 0 999px rgba(0, 0, 0, .05);
+    }
+
+    /* 按钮点击统计的一种css方式*/
+    button:active:after {
+        content: url("https://www.baidu.com");
+        display: none;
+    }
+
+    [type=submit]:active {
+        background-image: linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05));
+    }
+    </style>
+</head>
+<body>
+<p><img src="img/saito.jpg"></p>
+<button>哈哈</button>
+<input type="submit" value="哈哈"/>
+
+</body>
+</html>

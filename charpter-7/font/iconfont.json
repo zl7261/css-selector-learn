@@ -1,0 +1,16 @@
+{
+  "id": "1758024",
+  "name": "css-selector",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "961540",
+      "name": "delete",
+      "font_class": "shanchu",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    }
+  ]
+}
