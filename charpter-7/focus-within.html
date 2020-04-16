@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    form:focus-within {
+        outline: 1px red solid;
+    }
+
+    .text:focus {
+        outline: 1px green solid;
+    }
+
+    form:focus-within label {
+        color: slateblue;
+        text-shadow: 0 0 1px;
+    }
+
+    </style>
+</head>
+<body>
+<form action="">
+    <label>用户名</label><input type="text" class="text" placeholder="测试">
+    <input type="text" placeholder="测试">
+    <button>提交</button>
+</form>
+
+</body>
+</html>
