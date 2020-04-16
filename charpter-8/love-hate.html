@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    a:link {
+        color: black;
+    }
+
+    a:visited {
+        color: gray;
+    }
+
+    a:hover {
+        color: red;
+    }
+
+    a:active {
+        color: blue;
+    }
+
+    ol {
+        display: flex;
+        width: 1200px;
+        box-sizing: border-box;
+    }
+
+    li {
+        list-style: georgian;
+        padding-left: 10px;
+        margin: auto;
+    }
+
+    .parent:after {
+        content: '😄';
+    }
+    </style>
+</head>
+<body>
+
+<ol start="10" reversed>
+    <li>这4个伪类特指度相同</li>
+    <li>一个链接可能同时处于多种状态，即同时属于多个伪类</li>
+    <li value="10">link和visited是常态效果</li>
+    <li>hover和active是瞬时效果</li>
+</ol>
+<a href="">测试1</a>
+<a href="">测试2</a>
+<a href="" class="parent">测试3</a>
+</body>
+</html>
