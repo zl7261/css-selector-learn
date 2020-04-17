@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+    a {
+        /* 不能凭空设置visited背景色*/
+        background-color: red;
+    }
+
     a:link {
         color: black;
     }
 
     a:visited {
         color: gray;
+        background: yellow;
     }
 
     a:hover {
@@ -18,6 +24,10 @@
 
     a:active {
         color: blue;
+    }
+
+    a:visited span {
+        color: rgba(255, 0, 0, 0.5);
     }
 
     ol {
@@ -45,8 +55,9 @@
     <li value="10">link和visited是常态效果</li>
     <li>hover和active是瞬时效果</li>
 </ol>
-<a href="">测试1</a>
-<a href="">测试2</a>
-<a href="" class="parent">测试3</a>
+<span style="color:  rgba(255, 0, 0, 0.5);">半透明红色</span>
+<a href="#abc">测试1 <span>visited</span></a>
+<a href="#efg">测试2<span>visited</span></a>
+<a href="#hij" class="parent">测试3<span>visited</span></a>
 </body>
 </html>
