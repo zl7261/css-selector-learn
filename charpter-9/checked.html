@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    :checked {
+        background-color: deepskyblue;
+    }
+
+    input[checked] {
+        box-shadow: 0 0 0 2px red;
+    }
+
+    .pay input:default + label::after {
+        content: "（推荐）";
+    }
+    </style>
+</head>
+<body>
+<fieldset disabled>
+    <input>
+
+    <input type="checkbox" checked>
+    <input type="checkbox" checked>
+</fieldset>
+<canvas width="120" height="80" checked>
+
+</canvas>
+<div class="pay">
+    <p>
+        <input type="radio" name="pay" id="pay0" value="0"> <label for="pay0">支付宝</label>
+    </p>
+    <p>
+        <input type="radio" name="pay" id="pay1" value="1" checked> <label for="pay1">微信</label>
+    </p>
+    <p>
+        <input type="radio" name="pay" id="pay2" value="2"> <label for="pay2">银行卡</label>
+    </p>
+</div>
+</body>
+</html>

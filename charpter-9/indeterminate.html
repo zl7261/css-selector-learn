@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .cs-list {
+        display: inline-block;
+        width: 260px;
+        margin: 0 5px;
+        vertical-align: top;
+    }
+
+    .cs-list-caption {
+        margin-bottom: 10px;
+    }
+
+    /*复选框默认，全选和半选*/
+    .cs-checkbox {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid transparent;
+        border-radius: 3px;
+        color: gray;
+        box-shadow: inset 0 0 0 1px;
+        background-color: #fff;
+        box-sizing: border-box;
+        vertical-align: -.5ex;
+        user-select: none;
+        transition: color .2s;
+        overflow: hidden;
+    }
+
+    :checked + .cs-checkbox,
+    :indeterminate + .cs-checkbox {
+        color: deepskyblue;
+    }
+
+    :checked + .cs-checkbox::before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 3px;
+        border-left: 2px solid;
+        border-bottom: 2px solid;
+        margin: 4px auto 0;
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    :indeterminate + .cs-checkbox::before {
+        content: "";
+        display: block;
+        width: 8px;
+        border-bottom: 2px solid;
+        margin: 7px auto 0;
+    }
+    </style>
+</head>
+<body>
+<div class="cs-list">
+    <table>
+        <caption class="cs-list-caption">1. 原生复选框</caption>
+        <thead>
+            <tr>
+                <th width="40"><input type="checkbox"></th>
+                <th>第1列</th>
+                <th>第2列</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>数据1-1</td>
+                <td>数据1-2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>数据2-1</td>
+                <td>数据2-2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>数据3-1</td>
+                <td>数据3-2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="cs-list">
+    <table>
+        <caption class="cs-list-caption">2. 自定义复选框</caption>
+        <thead>
+            <tr>
+                <th width="40">
+                    <input type="checkbox" id="listAll" hidden>
+                    <label for="listAll" class="cs-checkbox"></label>
+                </th>
+                <th>第1列</th>
+                <th>第2列</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" id="list1" hidden>
+                    <label for="list1" class="cs-checkbox"></label>
+                </td>
+                <td>数据1-1</td>
+                <td>数据1-2</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="list2" hidden>
+                    <label for="list2" class="cs-checkbox"></label>
+                </td>
+                <td>数据2-1</td>
+                <td>数据2-2</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="list3" hidden>
+                    <label for="list3" class="cs-checkbox"></label>
+                </td>
+                <td>数据3-1</td>
+                <td>数据3-2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+// 全选半选的交互实现
+document.addEventListener('click', function (event) {
+    let target = event.target
+    if (target && target.type === 'checkbox') {
+        let table = target.closest('table')
+        // 全选复选框
+        let checkboxTh = table.querySelector('th input')
+        let checkboxsTd = [].slice.call(table.querySelectorAll('td input'))
+        // 点击全选按钮
+        if (target === checkboxTh) {
+            checkboxsTd.forEach(function (checkbox) {
+                checkbox.checked = checkboxTh.checked
+            })
+        } else {
+            let isNoChecked = checkboxsTd.every(function (checkbox) {
+                return checkbox.checked === false
+            }), isAllChecked = checkboxsTd.every(function (checkbox) {
+                return checkbox.checked === true
+            })
+            // 不选，全选和半选
+            checkboxTh.indeterminate = false
+            if (isNoChecked) {
+                checkboxTh.checked = false
+            } else if (isAllChecked) {
+                checkboxTh.checked = true
+            } else {
+                checkboxTh.indeterminate = true
+            }
+        }
+    }
+})
+</script>
+</body>
+</html>

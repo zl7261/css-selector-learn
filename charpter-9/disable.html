@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    :disabled {
+        background-color: red;
+    }
+
+    :enabled {
+        background-color: yellow;
+    }
+    </style>
+</head>
+<body>
+<a disabled>测试</a>
+<a href="#1">测试</a>
+<a href disabled>测试</a>
+
+
+<label>
+    启用
+    <input type="text"/>
+</label>
+<label>
+    禁用
+    <input type="text" disabled/>
+</label>
+
+
+<input type="radio" name="demo"/>单选1
+<input type="radio" name="demo"/>单选2
+<input type="radio" name="demo"/>单选3
+<input type="radio" name="demo"/>单选4
+<input type="radio" name="demo"/>单选5
+
+<hr>
+点击名字 可以选中
+<input type="radio" name="demo" id="temp1"/><label for="temp1">单选1</label>
+<input type="radio" name="demo" id="temp2"/><label for="temp2">单选2</label>
+<input type="radio" name="demo" id="temp3"/><label for="temp3">单选3</label>
+<input type="radio" name="demo" id="temp4"/><label for="temp4">单选4</label>
+<input type="radio" name="demo" id="temp5"/><label for="temp5">单选5</label>
+
+<hr>
+简化的写法 name tableIndex
+<div class="short">
+    <label><input type="radio" name="demo1"/>单选1</label>
+    <label><input type="radio" name="demo2"/>单选2</label>
+    <label><input type="radio" name="demo3"/>单选3</label>
+    <label><input type="radio" name="demo4"/>单选4</label>
+    <label><input type="radio" name="demo5"/>单选5</label>
+</div>
+</body>
+</html>

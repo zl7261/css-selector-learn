@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    [type="checkbox"] {
+        position: absolute;
+        clip: rect(0 0 0 0);
+    }
+
+    .cs-button {
+        display: block;
+        text-align: center;
+        background-color: deepskyblue;
+        color: #fff;
+        padding: 5px;
+        margin-top: 1em;
+        cursor: pointer;
+    }
+
+    .cs-more-p,
+    [data-open=false] {
+        display: none;
+    }
+
+    :checked ~ [data-open=true] {
+        display: none;
+    }
+
+    :checked ~ .cs-more-p,
+    :checked ~ [data-open=false] {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+文章内容，文章内容，文章内容，文章内容，文章内容，文章内容，文章内容……
+<input type="checkbox" id="articleMore">
+<label class="cs-button" for="articleMore" data-open="true">阅读更多</label>
+<p class="cs-more-p">更多文章内容，更多文章内容，更多文章内容，更多文章内容。</p>
+<label class="cs-button" for="articleMore" data-open="false">收起</label>
+</body>
+</html>

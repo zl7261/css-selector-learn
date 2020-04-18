@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .cs-input {
+        border: 1px solid gray;
+        padding: 5px;
+        width: 100px;
+    }
+
+    .valid .cs-input:invalid {
+        border-color: red;
+    }
+
+    .valid .cs-input:valid ~ .cs-valid-tips::before {
+        content: "√";
+        color: green;
+    }
+
+    .valid .cs-input:invalid ~ .cs-valid-tips::before {
+        content: "不符合要求";
+        color: red;
+    }
+
+    .valid .cs-input:placeholder-shown ~ .cs-valid-tips::before {
+        content: "尚未输入值";
+    }
+    </style>
+</head>
+<body>
+<form id="csForm" novalidate>
+    <label>
+        验证码：<input class="cs-input" placeholder=" " required pattern="\w{4,6}">
+
+        <input type="submit" value="提交">
+        <span class="cs-valid-tips">
+        </span>
+    </label>
+</form>
+<script>
+csForm.addEventListener('submit', function (event) {
+    this.classList.add('valid')
+    event.preventDefault()
+})
+
+// // IE触发重绘的补丁
+// if (typeof document.msHidden != 'undefined' || !history.pushState) {
+//     document.addEventListener('input', function (event) {
+//         if (event.target && /^input|textarea$/i.test(event.target.tagName)) {
+//             event.target.parentElement.className = event.target.parentElement.className
+//         }
+//     })
+// }
+</script>
+</body>
+</html>

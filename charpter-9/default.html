@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    select {
+        width: 100px;
+    }
+
+    option:default {
+        color: red;
+        background-color: black;
+    }
+
+    option:not(:default) {
+        color: blue;
+    }
+    </style>
+</head>
+<body>
+<label>
+    <select multiple>
+        <option>1</option>
+        <option>2</option>
+        <option selected>3</option>
+        <option selected>4</option>
+        <option>5</option>
+    </select>
+</label>
+</body>
+</html>
